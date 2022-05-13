@@ -1,10 +1,9 @@
-import { Opacity } from '@material-ui/icons';
 import { motion } from 'framer-motion';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { RiCloseCircleLine } from 'react-icons/ri';
-import { login, signOut } from '../../redux/userService';
+import { login } from '../../redux/userService';
 import styles from './login.module.scss';
 
 const variants = {

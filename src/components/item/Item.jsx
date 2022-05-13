@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable jsx-a11y/alt-text */
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import styles from './item.module.scss';
 import { BiBookmarkHeart } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
@@ -23,7 +21,7 @@ function Item({ videoId, title, description, thumbnails }) {
         <Link to={`videos/${videoId}`} key={videoId}>
           <h2> {title} </h2>
           <p> {description} </p>
-          <img src={thumbnails.medium.url} />
+          <img src={thumbnails.medium.url} alt='avatar' />
         </Link>
         {!isFavorite(videoId) && user && (
           <motion.div className={styles.favorite}>

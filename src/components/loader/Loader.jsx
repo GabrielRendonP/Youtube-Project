@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import styles from './loader.module.scss';
 
 const ballVariants = {

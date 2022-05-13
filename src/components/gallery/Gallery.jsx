@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import { Link, Outlet } from 'react-router-dom';
+// import PropTypes from 'prop-types';
+import { Outlet } from 'react-router-dom';
 import styles from './content.module.scss';
 import Item from '../item/Item';
 

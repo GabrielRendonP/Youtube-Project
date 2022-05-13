@@ -58,7 +58,6 @@ const overlayVariant = {
 };
 
 const MenuOptions = ({ toggleMenu }) => {
-  // const [theme, setTheme] = useThemify();
   const navigate = useNavigate()
 
   return (

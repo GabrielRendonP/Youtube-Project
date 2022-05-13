@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import Gallery from '../components/gallery/Gallery';
 import Header from '../components/header/Header';
@@ -7,7 +6,7 @@ import Loader from '../components/loader/Loader';
 import Layout from '../layouts/Layout';
 import styles from './home.module.scss';
 
-function Home(props) {
+function Home() {
   const {videos, loading} = useSelector((state) => state.video)
   return (
     <Layout>

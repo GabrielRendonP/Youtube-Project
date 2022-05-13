@@ -1,4 +1,5 @@
-import PropTypes from 'prop-types';
+/* eslint-disable react-hooks/exhaustive-deps */
+// import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { AiFillLike } from 'react-icons/ai';
 import { GrOverview } from 'react-icons/gr';
@@ -22,7 +23,7 @@ const variants = {
 function Video({ videoId }) {
   const dispatch = useDispatch();
 
-  const { currentVideo, infoLoading, error } = useSelector((state) => state.video);
+  const { currentVideo, infoLoading } = useSelector((state) => state.video);
 
   useEffect(() => {
     dispatch(fetchVideoInfo(videoId));

@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types';
-import { useState } from 'react';
+// import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import Header from '../components/header/Header';
 import Playlist from '../components/playlist/Playlist';
