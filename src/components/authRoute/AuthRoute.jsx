@@ -7,5 +7,5 @@ export const AuthRoute = ({children}) => {
   if (user === null) {
     return <Navigate to="/unauthorized" />;
   }
-  return children;
+  return {children};
 }
