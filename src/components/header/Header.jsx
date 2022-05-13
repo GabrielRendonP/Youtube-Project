@@ -14,7 +14,7 @@ import useThemify from '../themify/useThemify';
 
 function Header({ setResultsList }) {
   const [setTheme] = useThemify('green');
-  const [currentTheme, toggleTheme] = useCycle('green', 'gold');
+  const [currentTheme, toggleTheme] = useCycle('gold', 'green');
   const { user } = useSelector((state) => state.user);
   const [open, toggleOpen] = useCycle(false, true);
   const [show, setShow] = useCycle(false, true);
