@@ -26,7 +26,8 @@ function Playlist({ videoId }) {
             },
           }) => {
             return (
-              <Link to={{pathname:`/videos/${videoId}`}} key={videoId}>
+              <Link className={styles.playListElement} 
+              to={{pathname:`/videos/${videoId}`}} key={videoId}>
                 <div key={videoId}>
                   <img src={medium.url} alt="Video thumbnail" />
                   <p> {title} </p>

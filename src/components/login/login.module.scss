@@ -1,0 +1,52 @@
+.container {
+  z-index: 2;
+  position: absolute;
+  top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  form {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    label {
+      display: flex;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--color2);
+
+      input {
+        border-radius: 20px;
+      }
+    }
+
+    input {
+      background-color: var(--color1);
+      font-size: 2rem;
+      border-radius: 20px;
+      color: var(--color4);
+    }
+  }
+}
+
+.close {
+  color: var(--color1);
+  transform: scale(2);
+  padding: 1rem;
+}
+
+.overlay {
+  position: absolute;
+  top: 25%;
+  right: 25%;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 50vmax;
+  height: 50vmax;
+  z-index: 1;
+  pointer-events: all;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.431);
+}

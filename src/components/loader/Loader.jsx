@@ -62,7 +62,9 @@ function Loader({ children, loading }) {
         >
           <motion.div
             style={{
-              backgroundColor: 'black',
+              padding: '1rem',
+              borderRadius: '50%',
+              backgroundColor: 'var(--color5)',
               display: 'grid',
               gridTemplateColumns: '1fr 1fr',
             }}

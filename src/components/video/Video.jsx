@@ -51,7 +51,7 @@ function Video({ videoId }) {
                 'encrypted-media; gyroscope; picture-in-picture'
               }
             />
-            <div style={{ display: 'flex', gap: '1rem' }}>
+            <div className={styles.stats}>
               <div>
                 <AiFillLike /> <span> Likes: {currentVideo.statistics.likeCount}</span>{' '}
               </div>
@@ -59,7 +59,9 @@ function Video({ videoId }) {
                 <GrOverview /> <span> Views: {currentVideo.statistics.viewCount}</span>{' '}
               </div>
             </div>
-            <div>{currentVideo.snippet.description}</div>
+            <div className={styles.description}>
+              <p>{currentVideo.snippet.description}</p>
+            </div>
           </motion.div>
         )}
       </Loader>

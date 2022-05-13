@@ -7,7 +7,7 @@ export const fetchVideos = createAsyncThunk('videos/fetchVideos', async (searchP
     part: 'snippet',
     q: `${searchParam}`,
     key: process.env.REACT_APP_YOUTUBE_APY_KEY,
-    maxResults: 4,
+    maxResults: 8,
   };
   const { data: response } = await axios.get(`${youtubeEndpoint}/search`, {
     params: options,

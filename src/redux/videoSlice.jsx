@@ -5,8 +5,8 @@ const initialState = {
   videos: null,
   relatedVideos: null,
   currentVideo: null,
-  favoriteVideos: null,
-  loading: true,
+  favoriteVideos: [],
+  loading: false,
   infoLoading: true,
   loadingPlaylist: true,
   error: null,  
@@ -15,7 +15,11 @@ const initialState = {
 const videoSlice = createSlice({
   name: 'video',
   initialState,
-  reducers: {},
+  reducers: {
+    addToFavorites (state, action) {
+      state.favoriteVideos.push(action.payload);
+    },
+  },
 
   extraReducers: {
     [fetchVideos.pending]: (state) => {
@@ -57,6 +61,6 @@ const videoSlice = createSlice({
   },
 });
 
-// export const {} = videoSlice.actions
+export const {addToFavorites} = videoSlice.actions
 
 export default videoSlice.reducer

@@ -1,7 +1,28 @@
 .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
   grid-column: 2 / span 2;
   grid-row: 1/ span 2;
   scroll-behavior: auto;
   overflow-y: auto;
   overflow-x: hidden;
+  background-color: var(--color5);
+  padding: 1rem;
+}
+
+.playListElement {
+  background-color: var(--color3);
+  text-decoration: none;
+  border-radius: 10px 40px;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    color: var(--color1);
+  }
 }

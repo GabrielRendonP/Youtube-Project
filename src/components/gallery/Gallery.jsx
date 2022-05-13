@@ -13,14 +13,13 @@ function Gallery({ resultsList }) {
             snippet: { channelTitle, description, thumbnails },
           }) => {
             return (
-              <Link to={`videos/${videoId}`} key={videoId}>
                 <Item
                   key={videoId}
+                  videoId={videoId}
                   title={channelTitle}
                   description={description}
                   thumbnails={thumbnails}
                 />
-              </Link>
             );
           }
         )}
