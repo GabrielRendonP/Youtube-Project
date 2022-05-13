@@ -41,9 +41,7 @@
 }
 .favorite {
   display: flex;
-  justify-content: end;
-  &:hover {
-  }
+  justify-content: flex-end;
 }
 
 .icon {

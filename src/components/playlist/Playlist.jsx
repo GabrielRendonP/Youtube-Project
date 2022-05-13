@@ -1,14 +1,15 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useDataFecth } from '../hooks/useDataFetch';
 import styles from './playlist.module.scss';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRelatedVideos, fetchVideoInfo } from '../../redux/videoService';
+import { fetchRelatedVideos } from '../../redux/videoService';
 
 function Playlist({ videoId }) {
   const dispatch = useDispatch()
-  const { relatedVideos, loadingPlaylist, error } = useSelector((state) => state.video)
+  const { relatedVideos, loadingPlaylist } = useSelector((state) => state.video)
 
   useEffect(() => {
     dispatch(fetchRelatedVideos(videoId))

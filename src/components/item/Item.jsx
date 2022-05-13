@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/alt-text */
 import PropTypes from 'prop-types';
 import styles from './item.module.scss';
 import { BiBookmarkHeart } from 'react-icons/bi';
