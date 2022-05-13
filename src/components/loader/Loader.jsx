@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 import styles from './loader.module.scss';
 
@@ -31,7 +31,7 @@ const cont = {
 
 const balls = [1, 2, 3, 4];
 
-function Loader() {
+function Loader({ children, loading }) {
   const createBalls = () =>
     balls.map((b, index) => {
       return (
@@ -45,27 +45,43 @@ function Loader() {
     });
 
   return (
-    <motion.div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        height: '100vh',
-      }}
-    >
-      <motion.div
-        style={{
-          backgroundColor: 'black',
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-        }}
-        variants={cont}
-        animate="animate"
-      >
-        {createBalls()}
-      </motion.div>
-    </motion.div>
+    <AnimatePresence initial exitBeforeEnter>
+      {loading ? (
+        <motion.div
+          key='balls'
+          initial={{opacity: 0}}
+          animate= {{opacity: 1}}
+          exit={{opacity: 0}}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'column',
+            height: '100vh',
+          }}
+        >
+          <motion.div
+            style={{
+              backgroundColor: 'black',
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+            }}
+            variants={cont}
+            animate="animate"
+          >
+            {createBalls()}
+          </motion.div>
+        </motion.div>
+      ) : (
+        <motion.div
+          key='children'
+          initial={{opacity: 0, rotateX: 100}}
+          animate={{opacity: 1, rotateX: 0}}
+          exit={{opacity: 0}}
+        >{ children }
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 Loader.propTypes = {};

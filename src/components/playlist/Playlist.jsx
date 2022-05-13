@@ -3,26 +3,21 @@ import PropTypes from 'prop-types';
 import { useDataFecth } from '../hooks/useDataFetch';
 import styles from './playlist.module.scss';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchRelatedVideos, fetchVideoInfo } from '../../redux/videoService';
 
 function Playlist({ videoId }) {
-  const [data, fetchData, isReady] = useDataFecth();
+  const dispatch = useDispatch()
+  const { relatedVideos, loadingPlaylist, error } = useSelector((state) => state.video)
 
   useEffect(() => {
-    const options = {
-      part: 'snippet',
-      relatedToVideoId: `${videoId}`,
-      type: 'video',
-      maxResults: 4,
-      key: process.env.REACT_APP_YOUTUBE_APY_KEY,
-    };
-
-    fetchData('https://youtube.googleapis.com/youtube/v3/search', options);
+    dispatch(fetchRelatedVideos(videoId))
   }, []);
 
   return (
     <div className={styles.container}>
-      {isReady &&
-        data.slice(1).map(
+      {!loadingPlaylist &&
+        relatedVideos.map(
           ({
             id: { videoId },
             snippet: {

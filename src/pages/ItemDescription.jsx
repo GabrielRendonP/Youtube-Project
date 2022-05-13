@@ -7,17 +7,15 @@ import Video from '../components/video/Video';
 import Layout from '../layouts/Layout';
 import styles from './itemDescription.module.scss';
 
-function ItemDescription(props) {
-  // const [data, fetchData, isReady] = useDataFecth();
-  const [resultsList, setResultsList] = useState([]);
+function ItemDescription() {
   const params = useParams();
 
   return (
     <Layout>
       <div className={styles.container}>
-        <Header setResultsList={setResultsList} />
+        <Header />
         <div className={styles.gridContainer}>
-          <Video videoId={params.videoId} />
+            <Video videoId={params.videoId} />
           <Playlist videoId={params.videoId} />
         </div>
       </div>

@@ -1,0 +1,1 @@
+export const youtubeEndpoint = 'https://youtube.googleapis.com/youtube/v3'
